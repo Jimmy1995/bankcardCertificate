@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Thu Dec 07 15:53:47 CST 2017
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=systemidtools.jar
+manifest.mergeall=true
+manifest.mainclass=Test
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=<po|ccp>;<jar|ant-1.6.5.jar>;<jar|antlr-2.7.6.jar>;<jar|aopalliance-1.0.jar>;<jar|asm-5.1.jar>;<jar|asm-attrs.jar>;<jar|asm-commons-5.1.jar>;<jar|aspectjweaver.jar>;<jar|cglib-2.1.3.jar>;<jar|commons-beanutils-1.7.0.jar>;<jar|commons-codec-1.6.jar>;<jar|commons-collections-3.1.jar>;<jar|commons-fileupload-1.3.2.jar>;<jar|commons-httpclient-3.0.1.jar>;<jar|commons-io-2.4.jar>;<jar|commons-lang3-3.4.jar>;<jar|commons-logging-1.0.4.jar>;<jar|commons-net-20070725.jar>;<jar|dom4j-1.6.1.jar>;<jar|druid-1.0.9.jar>;<jar|fastjson-1.1.33.jar>;<jar|freemarker-2.3.23.jar>;<jar|hibernate-jpa-2.0-api-1.0.0.Final.jar>;<jar|hibernate3.jar>;<jar|httpclient-4.5.2.jar>;<jar|httpcore-4.4.4.jar>;<jar|httpmime-4.3.6.jar>;<jar|javassist-3.20.0-GA.jar>;<jar|jaxen-1.1.1.jar>;<jar|jdom.jar>;<jar|jsoup-1.7.3.jar>;<jar|jstl.jar>;<jar|jta-1.1.jar>;<jar|jxl.jar>;<jar|log4j-1.2.15.jar>;<jar|log4j-api-2.7.jar>;<jar|mysql-connector-java-5.1.34.jar>;<jar|ognl-3.1.12.jar>;<jar|oscache-2.1.jar>;<jar|quartz-1.6.0.jar>;<jar|slf4j-api-1.5.8.jar>;<jar|slf4j-nop-1.5.8.jar>;<jar|spring-3.2.0.jar>;<jar|standard.jar>;<jar|struts2-convention-plugin-2.5.10.1.jar>;<jar|struts2-core-2.5.10.1.jar>;<jar|struts2-spring-plugin-2.5.10.1.jar>;<jar|urlrewritefilter-4.0.3.jar>;<jar|xmlsec-1.4.3.jar>;<jar|junit.jar>;<jar|org.hamcrest.core_1.1.0.v20090501071000.jar>;<jar|javaee.jar>;<jar|jsf-impl.jar>;<jar|jsf-api.jar>;<jar|jstl-1.2.jar>
+includes=

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:dwr = "http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.directwebremoting.org/schema/spring-dwr   
+	        http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd 
+	        http://www.springframework.org/schema/task 
+	        http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+	 <bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:config/init/jdbc.properties</value>
+		</property>
+	 </bean>
+	 <import resource="spring-jdbc.xml"/>
+     <!-- jdbcTemplate 方便操作SQL语句-->
+	 <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"/>
+     </bean>
+	 <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">false</prop>
+			</props>
+		</property>
+		<!--  自动扫描包  -->
+		<property name="packagesToScan" value="com.**.model,com.**.entity" />
+	</bean>
+	 <!-- 以静态变量保存Spring ApplicationContext, 可在任何代码任何地方任何时候中取出ApplicaitonContext -->
+	<bean id="springContextHolder" class="com.common.web.SpringContextHolder" />
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">  
+        <property name="sessionFactory" ref="sessionFactory"></property>  
+    </bean> 
+		<!-- 配置事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 事务超时时间30秒 
+		<property name="defaultTimeout" value="30"/>-->
+	</bean>
+	<!-- 配置事务的传播特性 -->
+		<tx:advice id="txAdvice" transaction-manager="transactionManager">
+			<tx:attributes>
+				<tx:method name="save*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="update*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="del*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="alter*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="modify*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="apply*" propagation="REQUIRES_NEW"  isolation="READ_COMMITTED"/><!-- apply开头的方法新建事务 -->
+				<tx:method name="log*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="call*" propagation="REQUIRES_NEW"  isolation="READ_COMMITTED"/><!-- call开头的方法新建事务 -->
+				<tx:method name="execute*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="set*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="do*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="init*" propagation="REQUIRED"  isolation="READ_COMMITTED"/>
+				<tx:method name="*" read-only="false" propagation="SUPPORTS"  isolation="READ_COMMITTED"/>
+			</tx:attributes>
+		</tx:advice>
+	<!-- 使用annotation 自动注册bean(@Respository,@Component),并检查@Required,@Autowired的属性已被注入 -->
+	<context:component-scan base-package="com.**.action,com.**.service,com.**.dao,com.common.base" />
+	<task:annotation-driven/>
+	<!-- 那些类的哪些方法参与事务 -->
+	<aop:config>
+	<!-- 第一个*代表所有的包/第二个*代表所有的返回值类型/  第三个*代表所有的类/  第四个*代表类所有方法/ 最后一个..代表所有的参数。 -->
+		<aop:pointcut id="allServiceMethod" expression="execution(* com..service..*.*(..))" />
+		<aop:advisor pointcut-ref="allServiceMethod" advice-ref="txAdvice" order="300"/>
+	</aop:config>
+	<!-- 配置quartz定时任务 -->
+	<bean id="schedulerFactory" class="org.springframework.scheduling.quartz.SchedulerFactoryBean" lazy-init="true"/>
+	<bean id="connectionUtil" class="com.common.util.ConnectionUtil"><property name="dataSource" ref="dataSource"/> </bean>
+	<!-- 会话异常拦截与动态注释设置DataSource，order必须早于事务AOP-->
+	
+	<aop:config proxy-target-class="false">
+		<aop:advisor pointcut-ref="allServiceMethod" advice-ref="sessionBeforeAdvice" order="100"/>
+	</aop:config>
+	<!-- 动态清除当前线程DataSource,order必须晚于事务AOP-->
+	<aop:config proxy-target-class="false">
+		<aop:advisor pointcut-ref="allServiceMethod" advice-ref="dataSourceAfterAdvice" order="400"/>
+	</aop:config>
+	<bean id="sessionBeforeAdvice" class="com.common.web.datasource.SessionBeforeAdvice" />
+	<bean id="dataSourceAfterAdvice" class="com.common.web.datasource.DataSourceAfterAdvice" />
+</beans>

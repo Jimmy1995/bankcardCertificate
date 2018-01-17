@@ -1,0 +1,17 @@
+﻿{  
+"sProcessing": "<div class='l-grid-loading' style='display: block;'>加载中...</div>",  
+"sLengthMenu": "_MENU_",  
+"sZeroRecords": "没有您要搜索的内容",  
+"sInfo": "第_START_-_END_,总计:<span class='badge'>_TOTAL_</span>",  
+"sInfoEmpty": "记录数为<span class='badge'>0</span>",  
+"sInfoFiltered": "(全部记录数 _MAX_  条)",  
+"sInfoPostFix": "",  
+"sSearch": "搜索",  
+"sUrl": "",  
+"oPaginate": {  
+	"sFirst":    "",  
+	"sPrevious": "",  
+	"sNext":     "",  
+	"sLast":     ""  
+	}  
+} 

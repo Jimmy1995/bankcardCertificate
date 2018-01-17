@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manage>
+	<!-- 优先级从低到高 manageKeyWords=>disManageKeyWords=>noLogin -->
+	<!-- 地址中包含了manage/的就会要求过滤访问权限，多个规则用“;”隔开 -->
+	<manageKeyWords>
+		<text>manage/</text>
+		<text>tsfpay/</text>
+	</manageKeyWords>
+	<!-- 下面配置的是虽然要登录但是不用访问权限的请求 -->
+	<disManageKeyWords>
+		<text>file-manage!upload.action</text>
+		<text>file-manage!download.action</text>
+		<text>file-manage!showImg.action</text>
+	</disManageKeyWords>
+	<!-- 下面定义的请求是不用登录也能访问的;除此之外的所有action结尾的请求都要登录 -->
+	<noLogin>
+		<text>login.action</text>
+		<text>loginOut.action</text>
+		<text>doRequest.action</text>
+		<text>x2xpay/doRequest.action</text>
+		<text>x2xpay/payCallBack.action</text>
+		<text>x2xpay/refreshCache.action</text>
+	</noLogin>
+	<property><!-- 这个目录下定义的都会自动被系统记忆，只需要用System.getProperty("标签的名称")就可以得到值了,如下面两个标签所示 -->
+		<!-- 文件上传保存的目录 ，在系统中可以用System.getProperty("uploadRoot")来得到这个值-->
+		<!-- 用${catalina.home}包起来的，相当于java代码:System.getProperty(catalina.home),用#test#就是相当于文件分隔符(windows中是"/") -->
+		<uploadRoot>${catalina.home}#uploadfile#</uploadRoot>
+		<downLoadRoot>${catalina.home}#downloadfile#</downLoadRoot>
+		<!-- 遇上无权限的时候跳转到页面 ，在系统中可以用System.getProperty("noActionPage")来得到这个值-->
+		<noActionPage>/commons/noAction.jsp</noActionPage>
+	</property>
+</manage>

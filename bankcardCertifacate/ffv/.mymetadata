@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ffv"
+  id="myeclipse.1292481553555"
+  context-root="/ffv"
+  j2ee-spec="5.0"
+  archive="ffv.war">
+  <attributes>
+    <attribute name="webrootdir" value="/WebRoot" />
+  </attributes>
+</project-module>
+

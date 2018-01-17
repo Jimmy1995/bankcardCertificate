@@ -1,0 +1,98 @@
+10
+
+dir
+10
+svn://192.168.60.203/ffv/ffv_gateway/ffv/WebRoot/manage
+svn://192.168.60.203/ffv
+
+
+
+2018-01-11T03:22:37.716084Z
+3
+longzhiyong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1608273d-616a-4380-8b23-ee4adb9233e8
+
+action
+dir
+
+application
+dir
+
+cache
+dir
+
+dic
+dir
+
+group
+dir
+
+index
+dir
+
+log
+dir
+
+login.jsp
+file
+
+
+
+
+2018-01-11T03:39:58.961000Z
+ff3574ad248c80cfbe536ef49d48e9e9
+2018-01-11T03:22:37.716084Z
+3
+longzhiyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5516
+
+menu
+dir
+
+quartzJob
+dir
+
+role
+dir
+
+runInfo
+dir
+
+user
+dir
+

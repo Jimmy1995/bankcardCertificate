@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<listener> 
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class> 
+	</listener>
+	<!--Start Spring -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:config/spring/*.xml</param-value>
+	</context-param>
+	<!--End Spring-->
+	<!-- start  URL重写 -->
+	<filter>
+    	<filter-name>UrlRewriteFilter</filter-name>
+    	<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+	</filter>
+	<!-- end  URL重写 -->
+	<!-- start系统变量初始化 -->
+	 <servlet>  
+		 <servlet-name>initServlet</servlet-name>  
+		 <servlet-class>com.common.web.InitServlet</servlet-class>  
+		 <load-on-startup>2</load-on-startup>  
+ 	 </servlet> 
+ 	 <!-- end系统变量初始化 -->
+	<!--Start 延时加载 -->
+	<filter>
+		<filter-name>hibernateFilter</filter-name>
+		<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+		<!-- 是否单个Session-->
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<!-- 你在applicationCointext*.xml中配置的SessionFactory bean的id名-->
+		<init-param>
+			<param-name>sessionFactoryBeanName</param-name>
+			<param-value>sessionFactory</param-value>
+		</init-param>
+	</filter>
+	<!--End 延时加载 -->
+	<!-- 后台权限过滤 -->
+	<filter>
+		<filter-name>ManageServlet</filter-name>
+		<filter-class>com.common.web.filter.ManageFilter</filter-class>
+	</filter>
+	<!-- 后台日志过滤记录 -->
+	<filter>
+		<filter-name>LogFilterServlet</filter-name>
+		<filter-class>com.common.web.filter.LogFilter</filter-class>
+	</filter>
+	<!-- Struts -->
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
+	<!-- utf-8编码 -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>utf8</param-value>
+		</init-param>
+	</filter>
+	<!-- 导出数据过滤器 -->
+	<filter>
+		<filter-name>gridViewExport</filter-name>
+		<filter-class>com.common.web.filter.ExportFilter</filter-class>
+	</filter>
+	<!-- 过滤sql语句，防止注入攻击 
+	<filter>
+		<display-name>SqlFilter</display-name>
+		<filter-name>SqlFilter</filter-name>
+		<filter-class>com.common.web.filter.SqlFilter</filter-class>
+	</filter>-->
+	<filter-mapping>
+    	<filter-name>UrlRewriteFilter</filter-name>
+    	<url-pattern>/*</url-pattern>
+    	<dispatcher>REQUEST</dispatcher>
+    	<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping><!-- 调用顺序是由fileter-mapping的顺序决定的 -->
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>hibernateFilter</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ManageServlet</filter-name>
+		<url-pattern>*.action</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>ManageServlet</filter-name>
+		<url-pattern>/manage/webApp/webfm/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>LogFilterServlet</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>gridViewExport</filter-name>
+		<url-pattern>*.action</url-pattern>
+	</filter-mapping>
+	<!-- <filter-mapping>
+		<filter-name>SqlFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>*.action</url-pattern>
+		<dispatcher>REQUEST </dispatcher>    
+        <dispatcher>FORWARD </dispatcher>    
+        <dispatcher>INCLUDE </dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/manage/action/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/manage/dic/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/manage/group/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/manage/menu/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/manage/module/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/manage/role/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/manage/user/*</url-pattern>
+	</filter-mapping>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<!-- 一个application 保存在线用户 -->
+	<listener>
+		<listener-class>com.common.web.listener.OnlineUserListener</listener-class>
+	</listener>
+	<!--End Spring 
+Start DWR -->
+	<servlet>
+		<servlet-name>dwr</servlet-name>
+		<servlet-class>org.directwebremoting.spring.DwrSpringServlet</servlet-class>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<!--
+			这就是传说中的DWR反转调用的开关了(可以实现从服务端向客户端推送消息)，默认也是false。。。
+			dwr的逆向ajax其实主要包括两种模式：主动模式和被动模式。其中主动模式包括Polling和Comet两种，被动模式只有Piggyback这一种
+		-->
+		<init-param>
+			<param-name>activeReverseAjaxEnabled</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>dwr</servlet-name>
+		<url-pattern>/dwr/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+    	<servlet-name>validcodeServlet</servlet-name>
+    	<servlet-class>com.common.web.ValidCodeServlet</servlet-class>
+    </servlet>
+	<servlet-mapping>
+    	<servlet-name>validcodeServlet</servlet-name>
+    	<url-pattern>/validcodeServlet</url-pattern>
+  	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+	<!--未经授权-->
+	<error-page>
+		<error-code>401</error-code>
+		<location>/login.jsp</location>
+	</error-page>
+	<!--禁止访问-->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/commons/403.jsp</location>
+	</error-page>
+	<!--未发现请求URL-->
+	<error-page>
+		<error-code>404</error-code>
+		<location>/commons/404.jsp</location>
+	</error-page>
+	<!-- 内部服务器错误-->
+	<error-page>
+		<error-code>500</error-code>
+		<location>/commons/error.jsp</location>
+	</error-page>
+	<!-- 空指针-->
+	<error-page>
+		<exception-type>java.lang.NullPointerException</exception-type>
+		<location>/commons/error.jsp</location>
+	</error-page>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+	</login-config>
+<!--用户界面安装的<servlet>
+	    <servlet-name>setup</servlet-name>
+	    <servlet-class>com.common.web.setup.SetUp</servlet-class>
+  </servlet>
+  <servlet-mapping>
+	    <servlet-name>setup</servlet-name>
+	    <url-pattern>/servlet/setUp</url-pattern>
+  </servlet-mapping> -->
+   <!-- 控制jsp:include的编码 -->
+ <jsp-config>  
+     <jsp-property-group>  
+         <description>  
+             Special property group for JSP Configuration HTML   
+             example.   
+         </description>  
+         <display-name>JSPConfiguration</display-name>  
+         <url-pattern>*.html</url-pattern>  
+         <el-ignored>true</el-ignored>  
+         <page-encoding>UTF-8</page-encoding>  
+         <scripting-invalid>false</scripting-invalid>  
+         <include-prelude></include-prelude>  
+         <include-coda></include-coda>  
+     </jsp-property-group>  
+ </jsp-config> 
+  
+    <distributable />
+</web-app>

@@ -1,0 +1,5 @@
+#----------------------数据库配置-------------------
+datasource.url=jdbc\:mysql\://124.232.133.202\:9886/ffv?useUnicode\=true&characterEncoding\=UTF-8&autoReconnect\=true
+datasource.username=ffv_user
+datasource.password=JIngKK@0O01l1#ttmp
+hibernate.show_sql=true

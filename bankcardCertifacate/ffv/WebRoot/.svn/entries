@@ -1,0 +1,89 @@
+10
+
+dir
+10
+svn://192.168.60.203/ffv/ffv_gateway/ffv/WebRoot
+svn://192.168.60.203/ffv
+
+
+
+2018-01-11T03:22:37.716084Z
+3
+longzhiyong
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+1608273d-616a-4380-8b23-ee4adb9233e8
+
+META-INF
+dir
+
+WEB-INF
+dir
+
+biz
+dir
+
+commons
+dir
+
+css
+dir
+
+images
+dir
+
+index.jsp
+file
+
+
+
+
+2018-01-11T03:39:55.632000Z
+7b25e9360a8c7353ad8828439701444f
+2018-01-11T03:22:37.716084Z
+3
+longzhiyong
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+274
+
+js
+dir
+
+manage
+dir
+
+setup
+dir
+

@@ -1,0 +1,160 @@
+.col-0,.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10,.col-11,.col-12
+	{
+	float: left;
+	position: relative;
+	min-height: 1px;
+	padding-right: 2px;
+	padding-left: 2px
+}
+
+.col-12,.col-pull-12 {
+	width: 100%
+}
+
+.col-11,.col-pull-11 {
+	width: 91.66666666666666%
+}
+
+.col-10,.col-pull-10 {
+	width: 83.33333333333334%
+}
+
+.col-9,.col-pull-9 {
+	width: 75%
+}
+
+.col-8,.col-pull-8 {
+	width: 66.66666666666666%
+}
+
+.col-7,.col-pull-7 {
+	width: 58.333333333333336%
+}
+
+.col-6,.col-pull-6 {
+	width: 50%
+}
+
+.col-5,.col-pull-5 {
+	width: 41.66666666666667%
+}
+
+.col-4,.col-pull-4 {
+	width: 33.33333333333333%
+}
+
+.col-3,.col-pull-3 {
+	width: 25%
+}
+
+.col-2,.col-pull-2 {
+	width: 16.666666666666664%
+}
+
+.col-1,.col-pull-1 {
+	width: 8.333333333333332%
+}
+
+.col-0,.col-pull-0 {
+	width: auto
+}
+
+.panelBox .tableEditor,.l-dialog .tableEditor,.l-dialog .tableFrame {
+	margin-top: 0
+}
+
+.tableEditor {
+	width: 100%;
+	border-collapse: collapse;
+	border: 1px solid #dcebf7;
+	table-layout: fixed;
+	margin-top: 0px
+}
+
+.tableEditor tbody tr:first-child td {
+	border-top: 1px solid #dcebf7
+}
+
+.tableEditor tr,.tableEditor td,.tableEditor th {
+	border-collapse: collapse;
+	padding: 1px 3px;
+	vertical-align: middle;
+	border-top: 1px solid #d5e4f1;
+	border-bottom: 1px solid #d5e4f1
+}
+
+.tableEditor thead tr,.tableEditor tfoot tr {
+	background: #eaf0fb
+}
+
+.tableEditor thead td,.tableEditor thead th,.tableEditor tfoot td {
+	font-weight: bold;
+	color: #333;
+	padding: 5px !important;
+	text-align: center
+}
+
+.tdLabel {
+	text-align: right;
+	vertical-align: middle;
+	color: #667e99;
+	background-color: #edf3f4
+}
+
+.tdInput {
+	background: #fff;
+	text-align: left;
+	color: #000
+}
+
+.tdInput .checkbox,.tdInput .radio {
+	height: 26px
+}
+
+.tdButton,.tdPadding {
+	background: #fff;
+	text-align: center
+}
+
+.tdButton .button {
+	margin: 3px 0
+}
+.tdInput input{
+		width: 100%;
+}
+
+.l-tab-loading {
+	position: static;
+	z-index: 91000;
+	top: 0;
+	left: 0;
+	background: white url('../images/bigloading.gif') no-repeat center 40%;
+	width: 100%;
+	height: 100%;
+	_height: 800px;
+	display: none;
+}
+
+.nav>li>a{
+ 	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 9px;
+	padding-right: 9px;
+ }
+ /******************/
+ .ui-dialog-body {
+    padding: 9px;
+    text-align: center;
+}
+.ui-dialog-title {
+    margin: 0;
+    line-height: 1.428571429;
+    min-height: 16.428571429px;
+    padding: 9px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: bold;
+    cursor: default;
+}
+/******************/

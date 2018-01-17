@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>   
+	<constant name="struts.multipart.parser" value="jakarta-stream" />
+	<constant name="struts.multipart.parser" value="cos"/> 
+    <constant name="struts.objectFactory" value="spring"/>
+    <constant name="struts.ui.theme" value="simple"/>
+    <constant name="struts.multipart.saveDir" value="/tmp"/><!-- 临时文件夹 -->
+	<constant name="struts.multipart.maxSize" value="1048576000"/><!-- 1000M -->
+	<constant name="struts.freemarker.templatesCache" value="true"/><!--指定是否缓存FreeMarker模版。默认值false-->
+	<constant name="struts.convention.default.parent.package" value="frame-default"/>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"/><!-- 动态方法支持 -->
+	<!--constant name="struts2.sslplugin.httpPort" value="8085"--> 
+	<!--constant name="struts2.sslplugin.httpsPort" value="8080"--> 
+	<!-- package name="default" extends="ssl-default"--> 
+	<package name="frame-default" extends="struts-default" namespace="/">
+    <interceptors>
+	      <interceptor name="logInterceptor" class="com.common.web.interceptor.LogInterceptor"/>  
+	      <interceptor-stack name="frame-stack">
+	        	<interceptor-ref name="logInterceptor"/>
+	        	<interceptor-ref name="validation"><!-- 开启方法级别校验 -->
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                    <param name="validateAnnotatedMethodOnly">true</param>
+                </interceptor-ref>
+	       		<interceptor-ref name="defaultStack"/>
+	      </interceptor-stack>
+    </interceptors>
+    <default-interceptor-ref name="frame-stack"/><!--（这句是设置所有Action自动调用的拦截器堆栈)-->
+    <global-results>
+    	<result name="input">/manage/error.jsp</result>
+    	<result name="error">/commons/error.jsp</result>
+    </global-results>
+    </package>
+	
+</struts>

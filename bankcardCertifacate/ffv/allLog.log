@@ -1,0 +1,380 @@
+10:58:47 Log4jFilter.java--> {conn-10001} connected
+10:58:47 DruidDataSource.java--> {dataSource-1} inited
+10:58:47 Log4jFilter.java--> {conn-10001} pool-connect
+10:58:47 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+10:58:47 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@1c3a3b6b: startup date [Tue Jan 16 10:58:45 CST 2018]; root of context hierarchy
+10:58:48 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callMchid()}>>>>>********
+10:58:48 Log4jFilter.java--> {conn-10001} pool-connect
+10:58:48 Log4jFilter.java--> {conn-10001} setAutoCommit false
+10:58:48 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(busMchid)}>>>>>********
+10:58:48 Log4jFilter.java--> {conn-10002} connected
+10:58:48 Log4jFilter.java--> {conn-10002} pool-connect
+10:58:48 Log4jFilter.java--> {conn-10002} setAutoCommit false
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'busMchid'
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 71.826029 millis.
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [busMchid, 15, S668|000000000000, null]
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 16
+WHERE genType = 'busMchid'
+10:58:48 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 11.587574 millis.
+10:58:48 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(busMchid)}>>>>>********
+10:58:48 Log4jFilter.java--> {conn-10002} commited
+10:58:48 Log4jFilter.java--> {conn-10002} setAutoCommit true
+10:58:48 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+10:58:48 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callMchid()}>>>>>********
+10:58:48 Log4jFilter.java--> {conn-10001} commited
+10:58:48 Log4jFilter.java--> {conn-10001} setAutoCommit true
+10:58:48 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:04:47 Log4jFilter.java--> {conn-10002} closed
+11:10:59 Log4jFilter.java--> {conn-10001} connected
+11:10:59 DruidDataSource.java--> {dataSource-1} inited
+11:10:59 Log4jFilter.java--> {conn-10001} pool-connect
+11:10:59 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:10:59 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@5109f2ca: startup date [Tue Jan 16 11:10:57 CST 2018]; root of context hierarchy
+11:11:00 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:11:00 Log4jFilter.java--> {conn-10001} pool-connect
+11:11:00 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:11:00 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:11:00 Log4jFilter.java--> {conn-10002} connected
+11:11:00 Log4jFilter.java--> {conn-10002} pool-connect
+11:11:00 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 80.084583 millis.
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 40, 0000000000000, null]
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 41
+WHERE genType = 'b01id'
+11:11:00 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 15.065758 millis.
+11:11:00 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:11:00 Log4jFilter.java--> {conn-10002} commited
+11:11:00 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:11:00 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:11:00 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:11:00 Log4jFilter.java--> {conn-10001} commited
+11:11:00 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:11:00 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:01 Log4jFilter.java--> {conn-10001} connected
+11:13:01 DruidDataSource.java--> {dataSource-1} inited
+11:13:01 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:01 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:01 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@3fe428ea: startup date [Tue Jan 16 11:12:59 CST 2018]; root of context hierarchy
+11:13:02 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:02 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:02 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:13:02 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:02 Log4jFilter.java--> {conn-10002} connected
+11:13:02 Log4jFilter.java--> {conn-10002} pool-connect
+11:13:02 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 77.333779 millis.
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 41, 6|000000000000, null]
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 42
+WHERE genType = 'b01id'
+11:13:02 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 13.547508 millis.
+11:13:02 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:02 Log4jFilter.java--> {conn-10002} commited
+11:13:02 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:13:02 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:13:02 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:02 Log4jFilter.java--> {conn-10001} commited
+11:13:02 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:13:02 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:19 Log4jFilter.java--> {conn-10001} connected
+11:13:19 DruidDataSource.java--> {dataSource-1} inited
+11:13:20 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:20 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:20 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@3312fc47: startup date [Tue Jan 16 11:13:17 CST 2018]; root of context hierarchy
+11:13:20 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:20 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:20 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:13:20 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:20 Log4jFilter.java--> {conn-10002} connected
+11:13:20 Log4jFilter.java--> {conn-10002} pool-connect
+11:13:20 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 85.540791 millis.
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 42, 6|000000000000, null]
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 43
+WHERE genType = 'b01id'
+11:13:21 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 25.046336 millis.
+11:13:21 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:21 Log4jFilter.java--> {conn-10002} commited
+11:13:21 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:13:21 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:13:21 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:21 Log4jFilter.java--> {conn-10001} commited
+11:13:21 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:13:21 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:31 Log4jFilter.java--> {conn-10001} connected
+11:13:31 DruidDataSource.java--> {dataSource-1} inited
+11:13:31 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:31 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:32 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@3312fc47: startup date [Tue Jan 16 11:13:29 CST 2018]; root of context hierarchy
+11:13:32 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:32 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:32 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:13:32 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:32 Log4jFilter.java--> {conn-10002} connected
+11:13:32 Log4jFilter.java--> {conn-10002} pool-connect
+11:13:32 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 77.181203 millis.
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 43, 6|000000000000, null]
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 44
+WHERE genType = 'b01id'
+11:13:32 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 24.671552 millis.
+11:13:32 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:32 Log4jFilter.java--> {conn-10002} commited
+11:13:32 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:13:32 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:13:32 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:32 Log4jFilter.java--> {conn-10001} commited
+11:13:32 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:13:32 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:37 Log4jFilter.java--> {conn-10001} connected
+11:13:37 DruidDataSource.java--> {dataSource-1} inited
+11:13:38 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:38 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:13:38 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@1c3a3b6b: startup date [Tue Jan 16 11:13:36 CST 2018]; root of context hierarchy
+11:13:38 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:38 Log4jFilter.java--> {conn-10001} pool-connect
+11:13:38 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:13:38 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:39 Log4jFilter.java--> {conn-10002} connected
+11:13:39 Log4jFilter.java--> {conn-10002} pool-connect
+11:13:39 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 79.484177 millis.
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 44, 6|000000000000, null]
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 45
+WHERE genType = 'b01id'
+11:13:39 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 16.259399 millis.
+11:13:39 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:13:39 Log4jFilter.java--> {conn-10002} commited
+11:13:39 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:13:39 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:13:39 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:13:39 Log4jFilter.java--> {conn-10001} commited
+11:13:39 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:13:39 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:01 Log4jFilter.java--> {conn-10001} connected
+11:14:01 DruidDataSource.java--> {dataSource-1} inited
+11:14:02 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:02 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:02 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@3312fc47: startup date [Tue Jan 16 11:14:00 CST 2018]; root of context hierarchy
+11:14:02 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:02 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:02 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:14:02 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:02 Log4jFilter.java--> {conn-10002} connected
+11:14:02 Log4jFilter.java--> {conn-10002} pool-connect
+11:14:02 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 65.07651 millis.
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 45, 6|000000000000, null]
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 46
+WHERE genType = 'b01id'
+11:14:02 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 15.062003 millis.
+11:14:02 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:02 Log4jFilter.java--> {conn-10002} commited
+11:14:02 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:14:02 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:14:02 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:02 Log4jFilter.java--> {conn-10001} commited
+11:14:02 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:14:02 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:06 Log4jFilter.java--> {conn-10001} connected
+11:14:06 DruidDataSource.java--> {dataSource-1} inited
+11:14:07 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:07 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:07 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@1c3a3b6b: startup date [Tue Jan 16 11:14:05 CST 2018]; root of context hierarchy
+11:14:07 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:07 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:07 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:14:07 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:07 Log4jFilter.java--> {conn-10002} connected
+11:14:08 Log4jFilter.java--> {conn-10002} pool-connect
+11:14:08 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 60.739873 millis.
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 46, 6|000000000000, null]
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 47
+WHERE genType = 'b01id'
+11:14:08 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 13.356703 millis.
+11:14:08 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:08 Log4jFilter.java--> {conn-10002} commited
+11:14:08 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:14:08 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:14:08 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:08 Log4jFilter.java--> {conn-10001} commited
+11:14:08 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:14:08 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:12 Log4jFilter.java--> {conn-10001} connected
+11:14:12 DruidDataSource.java--> {dataSource-1} inited
+11:14:13 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:13 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:13 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@3312fc47: startup date [Tue Jan 16 11:14:11 CST 2018]; root of context hierarchy
+11:14:13 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:13 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:13 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:14:13 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:13 Log4jFilter.java--> {conn-10002} connected
+11:14:13 Log4jFilter.java--> {conn-10002} pool-connect
+11:14:13 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 62.376565 millis.
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 47, 6|000000000000, null]
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 48
+WHERE genType = 'b01id'
+11:14:14 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 11.503948 millis.
+11:14:14 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:14 Log4jFilter.java--> {conn-10002} commited
+11:14:14 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:14:14 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:14:14 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:14 Log4jFilter.java--> {conn-10001} commited
+11:14:14 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:14:14 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:55 Log4jFilter.java--> {conn-10001} connected
+11:14:55 DruidDataSource.java--> {dataSource-1} inited
+11:14:55 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:55 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:14:55 SpringContextHolder.java--> ********************注入ApplicationContext到SpringContextHolder:org.springframework.context.support.ClassPathXmlApplicationContext@3312fc47: startup date [Tue Jan 16 11:14:53 CST 2018]; root of context hierarchy
+11:14:56 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:56 Log4jFilter.java--> {conn-10001} pool-connect
+11:14:56 Log4jFilter.java--> {conn-10001} setAutoCommit false
+11:14:56 SessionBeforeAdvice.java--> **************<<<<进入方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:56 Log4jFilter.java--> {conn-10002} connected
+11:14:56 Log4jFilter.java--> {conn-10002} pool-connect
+11:14:56 Log4jFilter.java--> {conn-10002} setAutoCommit false
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20000} executed. 
+SELECT *
+FROM sys_gennumber
+WHERE genType = 'b01id'
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} query executed. 64.994248 millis.
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} open
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Header: [genType, endNumber, genFunction, isBlack]
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} Result: [b01id, 51, 6|000000000000, null]
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20000, rs-50000} closed
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20001} executed. 
+UPDATE sys_gennumber
+SET endNumber = 52
+WHERE genType = 'b01id'
+11:14:56 Log4jFilter.java--> {conn-10002, pstmt-20001} update executed. effort 1. 14.01889 millis.
+11:14:56 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.common.frame.service.imp.GenNumberService.applySerializeNumber(b01id)}>>>>>********
+11:14:56 Log4jFilter.java--> {conn-10002} commited
+11:14:56 Log4jFilter.java--> {conn-10002} setAutoCommit true
+11:14:56 Log4jFilter.java--> {conn-10002} pool-recycle 
+
+11:14:56 DataSourceAfterAdvice.java--> **************<<<<退出方法{class com.x2x.manager.service.imp.TradeService.callB01id()}>>>>>********
+11:14:56 Log4jFilter.java--> {conn-10001} commited
+11:14:56 Log4jFilter.java--> {conn-10001} setAutoCommit true
+11:14:56 Log4jFilter.java--> {conn-10001} pool-recycle 
+
+11:16:59 Log4jFilter.java--> {conn-10002} closed
+11:19:01 Log4jFilter.java--> {conn-10002} closed
+11:19:19 Log4jFilter.java--> {conn-10002} closed
+11:19:31 Log4jFilter.java--> {conn-10002} closed
+11:19:37 Log4jFilter.java--> {conn-10002} closed
+11:20:01 Log4jFilter.java--> {conn-10002} closed
+11:20:06 Log4jFilter.java--> {conn-10002} closed
+11:20:12 Log4jFilter.java--> {conn-10002} closed
+11:20:55 Log4jFilter.java--> {conn-10002} closed

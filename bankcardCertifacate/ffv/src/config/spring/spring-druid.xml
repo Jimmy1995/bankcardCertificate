@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+            http://www.directwebremoting.org/schema/spring-dwr   
+	        http://www.directwebremoting.org/schema/spring-dwr-3.0.xsd">
+	<bean id="druid-stat-interceptor"
+		class="com.alibaba.druid.support.spring.stat.DruidStatInterceptor">
+	</bean>
+
+	<bean id="druid-type-proxyCreator"
+		class="com.alibaba.druid.support.spring.stat.BeanTypeAutoProxyCreator">
+		<!-- 所有ABCInterface的派生类被拦截监控 -->
+		<property name="targetBeanType" value="com.common.base.service.IBaseService" />
+		<property name="interceptorNames">
+			<list>
+				<value>druid-stat-interceptor</value>
+			</list>
+		</property>
+	</bean>
+</beans>

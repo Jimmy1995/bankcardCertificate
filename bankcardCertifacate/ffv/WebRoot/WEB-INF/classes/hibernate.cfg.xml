@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<property name="dialect">
+		<!-- org.hibernate.dialect.SQLServerDialect -->
+		<!--org.hibernate.dialect.Oracle10gDialect-->
+		org.hibernate.dialect.MySQLDialect
+	</property>
+	<property name="connection.url">
+		<!-- jdbc:sqlserver://localhost:1433;DatabaseName=role -->
+		<!--jdbc:oracle:thin:@localhost:1521:orcl-->
+		jdbc:mysql://localhost:3306/role
+	</property><!-- sa 123 root 123 -->
+	<property name="connection.username">root</property>
+	<property name="connection.password">123</property>
+	<property name="connection.driver_class">
+		<!-- com.microsoft.sqlserver.jdbc.SQLServerDriver -->
+		<!--oracle.jdbc.driver.OracleDriver-->
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="myeclipse.connection.profile">sql</property>
+	<!--
+		validate               加载hibernate时，验证创建数据库表结构 
+		create                  每次加载hibernate，重新创建数据库表结构。 
+		create-drop        加载hibernate时创建，退出是删除表结构 
+		update                 加载hibernate自动更新数据库结构 
+	-->
+	<property name="hbm2ddl.auto">create</property>
+	<property name="show_sql">true</property>
+	<mapping class="com.common.frame.model.UserInfo" />
+	<mapping class="com.common.frame.model.Role" />
+	<mapping class="com.common.frame.model.ActionInfo" />
+	<mapping class="com.common.frame.model.Menu" />
+	<mapping class="com.common.frame.model.Group" />
+	<mapping class="com.common.frame.model.Log" />
+	<mapping class="com.common.frame.model.FileInfo" />
+	<mapping class="com.common.frame.model.GenNumber" />
+	<mapping class="com.common.frame.model.DataDictionary" />
+	<mapping class="com.common.frame.model.Beans" />
+	<mapping class="com.common.frame.model.CacheConfig" />
+	<mapping class="com.common.frame.model.UserKind" />
+	<mapping class="com.common.frame.model.QuartzJob" />
+	
+	<mapping class="com.aiso.model.Story" />
+	<mapping class="com.aiso.model.Channel" />
+	<mapping class="com.aiso.model.Chapter" />
+	
+	<mapping class="com.crawler.model.Crawler" />
+	<mapping class="com.crawler.model.Supply" />
+	
+	<mapping class="com.aiso.model.WebSite" />
+	<mapping class="com.aiso.model.VipUser" />
+	<mapping class="com.aiso.model.UserChannel" />
+	
+	<mapping class="com.cms.model.Article" />
+	<mapping class="com.cms.model.Topic" />
+	
+	<mapping class="com.weichat.entity.WeiMessage" />
+	<mapping class="com.weichat.entity.WeiGroup" />
+	<mapping class="com.weichat.entity.WeiMenu" />
+	<mapping class="com.weichat.entity.WeiMessageLog" />
+	<mapping class="com.weichat.entity.WeiStaff" />
+	<mapping class="com.weichat.entity.WeiStaffManager" />
+	<mapping class="com.weichat.entity.WeiUser" />
+	<mapping class="com.weichat.entity.WeiCode" />
+	
+	
+	
+	<mapping class="com.stock.model.Djcwzb" />
+	<mapping class="com.stock.model.Stock" />
+	<mapping class="com.stock.model.StockType" />
+	<mapping class="com.stock.model.Analyse" />
+	
+	<mapping class="com.bjxt.entity.Custom" />
+	<mapping class="com.bjxt.entity.CustomProduct" />
+	<mapping class="com.bjxt.entity.Product" />
+	<mapping class="com.bjxt.entity.TradeLog" />
+</session-factory>
+</hibernate-configuration>

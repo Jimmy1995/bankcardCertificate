@@ -1,0 +1,18 @@
+#Sat Aug 12 17:22:36 CST 2017
+eclipse.preferences.version=1
+encoding//WebRoot/biz/x2x/alipay.jsp=UTF-8
+encoding//WebRoot/biz/x2x/alipayReturn.jsp=UTF-8
+encoding//WebRoot/biz/x2x/error.jsp=UTF-8
+encoding//WebRoot/commons/noAction.jsp=UTF-8
+encoding//WebRoot/commons/template/charts/spline.jsp=UTF-8
+encoding//WebRoot/js=UTF-8
+encoding//WebRoot/js/formValidatorRegex.js=UTF-8
+encoding//WebRoot/js/jquery_last.js=UTF-8
+encoding//WebRoot/js/zTree/js/jquery.ztree.all-3.5.min.js=UTF-8
+encoding//WebRoot/manage/index/index.jsp=UTF-8
+encoding//WebRoot/productCar.jsp=UTF-8
+encoding//src/com/weichat/api/base/result/result.properties=UTF-8
+encoding//src/config/init/jdbc.properties=UTF-8
+encoding//src/log4j.properties=UTF-8
+encoding//src/oscache.properties=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,77 @@
+
+body { 
+margin:0; padding:0; font-size:9pt;	
+background-color: #ffffff; 
+color: #336699;
+SCROLLBAR-FACE-COLOR: #BED8EB; 
+SCROLLBAR-SHADOW-COLOR: #DDF8FF; 
+SCROLLBAR-HIGHLIGHT-COLOR: #92C0D1; 
+SCROLLBAR-3DLIGHT-COLOR: #DDF8FF; 
+SCROLLBAR-DARKSHADOW-COLOR: #92C0D1; 
+SCROLLBAR-TRACK-COLOR:#BED8EB; 
+SCROLLBAR-ARROW-COLOR: #92C0D1 
+}
+
+
+#top{width:100%; height:60px; background:url(main_04.gif);}
+
+#logo{width:357px; height:60px; background:url(main_02.gif); float:left; margin-left:32px;}
+
+#user{ margin-top:38px; padding-left:40px; float:left;}
+
+#main{width:100%;background:url(main_bg.gif) repeat-x;}
+
+#left{width:188px; background-repeat:repeat-x;}
+
+#left_menu{ width:189px;background:url(menuTop.png) no-repeat; height:46px; }
+
+#left_tree{width:189px; background:url(menuBody.png); height:490px; overflow: hidden;}
+#left_treeMenuAndGroup{width:184px; background:url(main_19.gif); height:490px; margin-left:4px;overflow: auto;}
+.tree_icon0 {width:162px; height:28px; background:url(main_12.gif); margin-left:7px; text-align:center;}
+.tree_icon1 {width:162px; height:28px; background:url(main_13.gif); margin-left:7px; text-align:center;}
+
+#tree_text{ width:162px; margin-left:11px; margin-top:10px; list-style:none;}
+
+.tree_li {list-style:none; line-height:25px;}
+
+.list_img{margin-right:5px; width:3px; margin-left:5px;}
+
+#yh{width:50px; height:28px; float:left; margin-left:20px; margin-top:0px; line-height:25px; color:#fff;}
+
+#system{width:50px; height:28px; float:right; margin-right:20px; margin-top:0px; line-height:25px; color:#fff;}
+
+#left_tree_down{height:16px; width:189px;  margin-bottom:0px; background:url(menuBottom.png);}
+
+#tree_down{height:17px; width:184px; margin-left:4px; margin-bottom:0px; background:url(main_21.gif);}
+
+#right_top{height:35px;color:#fff;background-image:url(right_top_r.png) ; background-repeat:repeat-x;}
+
+#img{height:26px; width:35px; float:left;padding-top:5px; text-align:center;}
+#img_l{height:36px; width:47px; float:left; text-align:center;background-image:url(right_top_l.png) ;}
+.imgtext{ float:right; display: block; margin-top:13px; margin-left:300px;}
+.navi{ float:left;font-size:15px ; font-weight: bold;display: block; margin-top:13px; margin-left:3px;}
+
+#loginout{float:right; margin-right:15px;padding-top:5px; text-align:center; width:20px;}
+
+#message{float:right; margin-right:30px;height:25px; padding-top:10px; text-align:center; width:16px;}
+
+#loginoutimg{width:26px; height:26px; float:left;}
+
+.logintext{display: block; padding-top:9px; margin-left:3px; float:left;}
+
+#right_font{padding-top:10px;height:28px; background-image:url(main_10.gif) ; background-repeat:repeat-x;}
+
+#right_font img {padding-right:8px; margin-left:15px;}
+
+.bfont{ font-weight:bolder; font-size:9pt;}
+
+.content {
+		height:100%;
+		overflow: auto;
+		margin-top: 0px;
+		float: center;
+	}
+.no { display:none;}
+a {
+	color: #c75f3e;
+}
