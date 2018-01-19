@@ -133,6 +133,7 @@ public class TestApi{
 		request.setData(encodedata);
 		request.setHead((ReqHead)s);
 		request.getHead().setSign(sign);
+		//BeanUtils.copyProperties(bean, request, new String[]{"data"});
 		return request;
 	}
 	/**

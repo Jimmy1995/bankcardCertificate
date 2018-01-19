@@ -93,6 +93,10 @@ public class AuthTest {
 		BeanUtils.copyProperties(bean, request, new String[]{"data"});
 		request.setData(encodedata);
 		request.getHead().setSign(sign);
+		/*Object s=bean.getClass().getMethod("getHead").invoke(bean);
+		request.setData(encodedata);
+		request.setHead((ReqHead)s);
+		request.getHead().setSign(sign);*/
 		return request;
 	}
 	
