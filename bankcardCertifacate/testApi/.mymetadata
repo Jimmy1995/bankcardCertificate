@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="testApi"
+  id="myeclipse.1490254396791"
+  context-root="/testApi"
+  j2ee-spec="5.0"
+  archive="testApi.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
